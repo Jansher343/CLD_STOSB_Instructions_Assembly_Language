@@ -1,0 +1,22 @@
+
+    lea di,string
+    CLD
+    strt:
+    cmp [di],'$'
+    JE end
+    cmp [di],'*'
+    JE here
+    inc di
+    
+    jmp strt
+    
+    here:
+    mov al,'E'
+    stosb
+    jmp strt
+    
+    end:
+    
+    ret
+    
+    string db "TH*S* G*S* AR* B*ASTS$"
